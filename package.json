@@ -1,0 +1,30 @@
+{
+  "name": "node-red-contrib-rc522",
+  "main": "rc522.js",
+  "node-red": {
+    "nodes": {
+      "rc522": "rc522.js"
+    }
+  },
+  "version": "1.0.0",
+  "description": "Simple node to read NFC tags with a RC522 NFC reader.",
+  "homepage": "https://github.com/LennartHennigs/node-red-contrib-rc522",
+  "author": "Lennart Hennigs",
+  "license": "ISC",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/LennartHennigs/node-red-contrib-rc522.git"
+  },
+  "keywords": [
+    "node-red",
+    "rc522",
+    "nfc"
+  ],
+  "dependencies": {
+    "mfrc522-rpi": "^2.0.0",
+    "rpi-softspi": "^1.0.0"
+  }
+}

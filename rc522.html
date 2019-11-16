@@ -1,0 +1,60 @@
+<script type="text/javascript">
+    RED.nodes.registerType('rc522',{
+        category: 'network',
+        color: '#E9967A',
+        defaults: {
+            name: {value:""},
+            blockedFor: {value: 5, required: true, validate:RED.validators.number()}
+        },
+        inputs: 0,
+        outputs: 1,
+        icon: "bridge.png",
+        label: function() {
+            return this.name || "rc522";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="rc522">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-blockedFor"><i class="fa fa-tag"></i> Blocked for</label>
+        <input type="text" id="node-input-blockedFor" placeholder="Blocked for">
+    </div>
+    <div class="form-tips"><b>Enter a number of seconds the node shall not read another node for.</div>
+</script>
+
+<script type="text/x-red" data-help-name="rc522">
+<p>Reads the UID of NFC tags from a RC522 card reader..</p>
+
+ <h3>Output</h3>
+     <ol class="node-ports">
+         <li>Standard output
+             <dl class="message-properties">
+                 <dt>payload <span class="property-type">json</span></dt>
+                 <dd>the payload contains the UID as a hex string, as well as the timestamp and the bit size of the card.</dd>
+                 <code><pre>
+{
+  uid "2c6715d",
+  timestamp: 1572275898850,
+  bitSize: 16
+}
+
+</pre></code>
+             </dl>
+         </li>
+     </ol>
+
+<h3>Details</h3>
+    <p><code>msg.payload</code> is used as the payload of the published message.</p>
+
+<h3>References</h3>
+    <ul>
+        <li><a>GitHub</a> - the nodes github repository</li>
+    </ul>
+
+</script>
