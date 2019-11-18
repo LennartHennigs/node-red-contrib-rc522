@@ -7,7 +7,7 @@
     }
   },
   "version": "1.0.0",
-  "description": "Simple node to read NFC tags with a RC522 NFC reader.",
+  "description": "Simple node-red node for the Raspberry Pi to read NFC tags via a RC522 NFC reader.",
   "homepage": "https://github.com/LennartHennigs/node-red-contrib-rc522",
   "author": "Lennart Hennigs",
   "license": "ISC",
