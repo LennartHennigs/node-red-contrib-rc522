@@ -5,8 +5,8 @@ module.exports = function(RED) {
     this.blockedFor = config.blockedFor;
     var node = this;
 
-    const Mfrc522 = require("./node_modules/mfrc522-rpi/index");
-    const SoftSPI = require("./node_modules/rpi-softspi/index");
+    const Mfrc522 = require("../mfrc522-rpi/index");
+    const SoftSPI = require("../rpi-softspi/index");
     const softSPI = new SoftSPI({
       clock:  23, // pin number of SCLK
       mosi:   19, // pin number of MOSI
