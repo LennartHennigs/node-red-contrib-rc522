@@ -55,7 +55,12 @@ module.exports = function(RED) {
   node.log("UID: " + uid);
 
           }
+        } else {
+         node.log("Card read error!");
+         return;
         }
+      } else {
+        return;
       }
     }, refreshRate * 1000);
   }
