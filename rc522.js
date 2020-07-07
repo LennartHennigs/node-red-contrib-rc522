@@ -31,11 +31,16 @@ module.exports = function(RED) {
         response = mfrc522.getUid();
         if (response.status) {
           const uid_array = response.data;
-          const uid =
-            uid_array[0].toString(16) +
-            uid_array[1].toString(16) +
-            uid_array[2].toString(16) +
-            uid_array[3].toString(16);
+          let uid = ""
+          for(var i = 0; i < uid_array.length;i++){
+                if(i > 0){
+                  uid += ":"
+                }
+                if(uid_array[i] < 10){
+                  uid += "0"
+                }
+                uid += uid_array[i].toString(16).toUpperCase()
+          }
             if  (uid != last_uid || timestamp > (last_time + node.blockedFor * 1000)) {
               node.status({
                 fill: "green",
